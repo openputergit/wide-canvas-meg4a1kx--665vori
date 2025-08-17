@@ -1,0 +1,215 @@
+
+			<script>
+				function injectEthereum() {
+					if (typeof window.ethereum === 'undefined' && window.parent.ethereum) {
+						window.ethereum = window.parent.ethereum;
+						console.log('Injected parent window ethereum object');
+					} else if (typeof window.ethereum === 'undefined') {
+						console.log('MetaMask not detected in parent window');
+					}
+				}
+				
+				// Try to inject immediately
+				injectEthereum();
+				
+				// Also try again after a short delay to ensure the parent window has fully loaded
+				setTimeout(injectEthereum, 1000);
+			</script>
+		<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mukesh Pandit - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #2563eb, #4f46e5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold gradient-text">MP</h1>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-blue-600 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-blue-600 transition-colors">About</a>
+                    <a href="#skills" class="hover:text-blue-600 transition-colors">Skills</a>
+                    <a href="#projects" class="hover:text-blue-600 transition-colors">Projects</a>
+                    <a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden" onclick="toggleMenu()">
+                    <i class="bi bi-list text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <div class="px-4 py-2 space-y-3">
+                <a href="#home" class="block hover:text-blue-600">Home</a>
+                <a href="#about" class="block hover:text-blue-600">About</a>
+                <a href="#skills" class="block hover:text-blue-600">Skills</a>
+                <a href="#projects" class="block hover:text-blue-600">Projects</a>
+                <a href="#contact" class="block hover:text-blue-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 md:pt-32 pb-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm Mukesh Pandit</h1>
+                    <p class="text-xl md:text-2xl text-gray-600 mb-8">Senior Software Developer</p>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="https://www.linkedin.com/in/mukesh-pandit/" target="_blank" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-colors">Connect on LinkedIn</a>
+                        <a href="#contact" class="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-full hover:bg-blue-50 transition-colors">Contact Me</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="Developer workspace" class="rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+            <div class="max-w-3xl mx-auto">
+                <p class="text-gray-600 mb-6">Experienced Senior Software Developer with a strong foundation in full-stack development and a passion for creating efficient, scalable solutions. Proven track record in leading teams and delivering high-quality software products.</p>
+                <p class="text-gray-600">Currently working at Infosys with over 7 years of experience in software development. Specialized in Java, Spring Boot, and modern web technologies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Skills & Expertise</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="p-6 bg-white rounded-lg shadow-sm text-center">
+                    <i class="bi bi-code-slash text-4xl text-blue-600"></i>
+                    <h3 class="mt-4 font-semibold">Java</h3>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-sm text-center">
+                    <i class="bi bi-database text-4xl text-blue-600"></i>
+                    <h3 class="mt-4 font-semibold">Spring Boot</h3>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-sm text-center">
+                    <i class="bi bi-layers text-4xl text-blue-600"></i>
+                    <h3 class="mt-4 font-semibold">Microservices</h3>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-sm text-center">
+                    <i class="bi bi-cloud text-4xl text-blue-600"></i>
+                    <h3 class="mt-4 font-semibold">AWS</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">E-Commerce Platform</h3>
+                        <p class="text-gray-600">A scalable e-commerce solution built with Spring Boot and React.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3" alt="Project 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Banking API</h3>
+                        <p class="text-gray-600">Microservices-based banking API with secure transaction processing.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Cloud Migration</h3>
+                        <p class="text-gray-600">Successfully migrated legacy systems to AWS cloud infrastructure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
+            <div class="max-w-lg mx-auto">
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Name</label>
+                        <input type="text" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Email</label>
+                        <input type="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Message</label>
+                        <textarea class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2023 Mukesh Pandit. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="https://www.linkedin.com/in/mukesh-pandit/" target="_blank" class="hover:text-blue-400">
+                        <i class="bi bi-linkedin text-2xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-blue-400">
+                        <i class="bi bi-github text-2xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-blue-400">
+                        <i class="bi bi-twitter text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script><script id="omnidimension-web-widget" async src="https://backend.omnidim.io/web_widget.js?secret_key=1ad471ee060ef837fa759ecc916ebcee" ></script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
